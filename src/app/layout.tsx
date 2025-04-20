@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import GridContainer from "@/components/shared/grid-container/GridContainer.component";
+import Sidebar from "@/components/shared/navigation/sidebar/Sidebar.component";
+import Header from "@/components/shared/navigation/header/Header.component";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -24,10 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`background ${montserrat.className} antialiased`}>
+        <GridContainer cols={12}>
+          <Sidebar />
+          <main className="w-full min-h-screen col-span-10">
+            <Header />
+            {children}
+          </main>
+        </GridContainer>
       </body>
     </html>
   );
