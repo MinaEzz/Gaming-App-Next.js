@@ -23,10 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`background ${montserrat.className} antialiased`}>
+      <body
+        className={`background ${montserrat.className} antialiased`}
+        style={montserrat.style}
+      >
         <GridContainer cols={12}>
           <Sidebar />
-          <main className="w-full min-h-screen col-span-10">
+          <main className="w-full min-h-screen lg:col-span-10 col-span-full">
             <Header />
             {children}
           </main>
