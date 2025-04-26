@@ -1,6 +1,7 @@
 import Logo from "../../logo/Logo.component";
 import { NAV_LINKS } from "../Navigation.data";
 import NavLink from "./nav-link/NavLink.component";
+import SidebarButtons from "./sidebar-buttons/SidebarButtons.component";
 
 const Sidebar = () => {
   return (
@@ -20,6 +21,7 @@ const Sidebar = () => {
           })}
         </ul>
       </nav>
+      <SidebarButtons />
     </aside>
   );
 };

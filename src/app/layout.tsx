@@ -29,7 +29,7 @@ export default function RootLayout({
       >
         <GridContainer cols={12}>
           <Sidebar />
-          <main className="w-full min-h-screen lg:col-span-10 col-span-full">
+          <main className="w-full min-h-screen h-full lg:col-span-10 col-span-full overflow-auto">
             <Header />
             {children}
           </main>
